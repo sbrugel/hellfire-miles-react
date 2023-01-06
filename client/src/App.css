@@ -5,3 +5,15 @@
 .App-link {
   color: #61dafb;
 }
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid;
+}
+
+td {
+  text-align: left;
+  border: 1px solid gray;
+  padding: 5px;
+}

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const { Double } = require("mongodb");
 require("dotenv").config({ path: "./config.env" });
 
 const app = express();
@@ -24,26 +25,24 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String
 });
+const moveSchema = new mongoose.Schema({
+    user: String,
+    loco1: String,
+    loco2: String,
+    loco3: String,
+    loco4: String,
+    start: String,
+    end: String,
+    service: String,
+    mileage: Number
+});
 
 // models
 const User = new mongoose.model("User", userSchema);
+const Move = new mongoose.model("Move", moveSchema);
 
 // routes
-app.post("/login", (req, res) => {
-    const { name, password } = req.body;
-    User.findOne({ name: name }, (err, user) => {
-        if (user) {
-            if (password === user.password) {
-                res.send({ message: "Login successful!", user: user });
-            } else {
-                res.send({ message: "Login failed: Incorrect credentials." });
-            }
-        } else {
-            res.send({ message: "This user does not exist." });
-        }
-    })
-});
-
+// add a user to the database
 app.post("/register", (req, res) => {
     const { name, email, password } = req.body;
     User.findOne({ email: email }, (err, user) => {
@@ -60,6 +59,42 @@ app.post("/register", (req, res) => {
             });
         }
     });
+});
+
+// check for an existing user
+app.post("/login", (req, res) => {
+    const { name, password } = req.body;
+    User.findOne({ name: name }, (err, user) => {
+        if (user) {
+            if (password === user.password) {
+                res.send({ message: "Login successful!", user: user });
+            } else {
+                res.send({ message: "Login failed: Incorrect credentials." });
+            }
+        } else {
+            res.send({ message: "This user does not exist." });
+        }
+    })
+});
+
+// add a move to the database
+app.post("/moves", (req, res) => {
+    const { user, loco1, loco2, loco3, loco4, start, end, service, mileage } = req.body;
+    const move = new Move({ user, loco1, loco2, loco3, loco4, start, end, service, mileage})
+    move.save(err => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send({ message: `Move for ${user} added` });
+        }
+    });
+});
+
+// get all moves from a specific user
+app.get("/moves/:u", (req, res) => {
+    Move.find({ user: req.params.u }, (err, moves) => {
+        res.json(moves);
+    })
 });
 
 app.listen(port, () => {

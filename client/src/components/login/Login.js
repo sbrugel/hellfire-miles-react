@@ -18,12 +18,10 @@ const LoginPage = ({ setLoginUser }) => {
 
   const login = () => {
     const { name, password } = user;
-    alert('a')
     if (!name || !password) {
       alert("Missing a field!");
       return;
     }
-    alert('b')
     axios.post("http://localhost:5000/login", user).then((res) => {
       alert(res.data.message);
       setLoginUser(res.data.user);
@@ -61,7 +59,10 @@ const LoginPage = ({ setLoginUser }) => {
               />
             </div>
             <div class="flex w-full">
-              <button type="submit" onClick={login}>
+              <button type="submit" onClick={(e) => {
+                e.preventDefault();
+                login();
+              }}>
                 Login
               </button>
             </div>
