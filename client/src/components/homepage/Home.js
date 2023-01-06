@@ -1,9 +1,10 @@
 import React from 'react';
 
-const HomePage = () => {
+const HomePage = (user) => {
+    console.log('here')
     return (
         <>
-        <h1>Home</h1>
+        <h1>Logged in as { user.user.name }</h1>
         </>
     )
 }

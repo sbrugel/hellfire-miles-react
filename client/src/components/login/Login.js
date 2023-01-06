@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const LoginPage = ({ setLoginUser }) => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     password: "",
@@ -15,9 +17,17 @@ const LoginPage = ({ setLoginUser }) => {
   };
 
   const login = () => {
-    axios.post("http://localhost:3000/Login", user).then((res) => {
+    const { name, password } = user;
+    alert('a')
+    if (!name || !password) {
+      alert("Missing a field!");
+      return;
+    }
+    alert('b')
+    axios.post("http://localhost:5000/login", user).then((res) => {
       alert(res.data.message);
       setLoginUser(res.data.user);
+      navigate("/");
     });
   };
 
@@ -26,7 +36,7 @@ const LoginPage = ({ setLoginUser }) => {
       <div>
         <h1>Login to your account</h1>
         <p>
-          Don't have an account? <a href="/">Register here.</a>
+          Don't have an account? <a href="/register">Register here.</a>
         </p>
         <div>
           <form action="#">
@@ -35,7 +45,7 @@ const LoginPage = ({ setLoginUser }) => {
                 type="text"
                 id="sign-in-name"
                 name="name"
-                value={user.name}
+                value={ user.name }
                 onChange={ handleChange }
                 placeholder="Username"
               />
@@ -50,9 +60,6 @@ const LoginPage = ({ setLoginUser }) => {
                 placeholder="Password"
               />
             </div>
-            <p>
-              <a href="a">Forgot your password?</a>
-            </p>
             <div class="flex w-full">
               <button type="submit" onClick={login}>
                 Login

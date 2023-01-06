@@ -20,7 +20,7 @@ const RegisterPage = () => {
     const { name, email, password } = user;
     if (name && email && password) {
       axios
-        .post("http://localhost:3000/Register", user)
+        .post("http://localhost:5000/register", user)
         .then((res) => console.log(res));
     } else {
       alert("You are missing a field!");
