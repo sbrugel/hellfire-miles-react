@@ -1,12 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const HomePage = (user) => {
-    const [file, setFile] = useState({});
     const fileReader = new FileReader();
+    const [file, setFile] = useState({}); // selected file to be imported
 
-    const [moves, setMoves] = useState([]);
-    const [movesDisplay, setMovesDisplay] = useState([]);
+    const [moves, setMoves] = useState([]); // the list of moves this user has done
+    const [movesDisplay, setMovesDisplay] = useState([]); // the moves as they are displayed on the page (INCLUDES <p> tags)
+    const [statsDisplay, setStatsDisplay] = useState(''); // stats display (does NOT include <p> tags)
 
     // on page load, get moves from this user
     useEffect(() => {
@@ -21,17 +22,44 @@ const HomePage = (user) => {
         axios.get(`http://localhost:5000/moves/${user.user.name}`).then((moves) => {
             const data = moves.data.map((m) => 
                 <tr key={m._id}>
-                    <td>{m.loco1}</td>
-                    <td>{m.loco2 || 'None'}</td>
-                    <td>{m.loco3 || 'None'}</td>
-                    <td>{m.loco4 || 'None'}</td>
+                    <td>{<b>{m.loco1}</b>}</td>
+                    <td>{m.loco2 ? <b>{m.loco2}</b> : 'None'}</td>
+                    <td>{m.loco3 ? <b>{m.loco3}</b> : 'None'}</td>
+                    <td>{m.loco4 ? <b>{m.loco4}</b> : 'None'}</td>
                     <td>{m.start}</td>
                     <td>{m.end}</td>
                     <td>{m.service}</td>
                     <td>{m.mileage}</td>
-                </tr>)
-            setMovesDisplay(data.length > 0 ? <table>{ data }</table> : <p>No moves yet</p>)
+                </tr>);
+            setMovesDisplay(data.length > 0 ? <table><th>Loco 1</th><th>Loco 2</th><th>Loco 3</th><th>Loco 4</th><th>Start</th><th>End</th><th>Service</th><th>Mileage</th>
+                { data }</table> : <p>No moves yet</p>);
+
+            const locos = [];
+            let mileage = 0;
+            for (const move of moves.data) {
+                mileage += move.mileage;
+                if (!locos.includes(move.loco1) && move.loco1.length === 5) { // length check to see if its an actual loco, not a D/EMU or other transport
+                    locos.push(move.loco1);
+                }
+                if (move.loco2) {
+                    if (!locos.includes(move.loco2)) {
+                        locos.push(move.loco2);
+                    }
+                }
+                if (move.loco3) {
+                    if (!locos.includes(move.loco3)) {
+                        locos.push(move.loco3);
+                    }
+                }
+                if (move.loco4) {
+                    if (!locos.includes(move.loco4)) {
+                        locos.push(move.loco4);
+                    }
+                }
+            }
+            setStatsDisplay(data.length > 0 ? `You have been on ${data.length} journeys on ${locos.length} different locos, totalling ${Math.round(mileage)} miles` : '');
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [moves]);
 
     /**
@@ -105,12 +133,14 @@ const HomePage = (user) => {
     return (
         <>
             <h1>{ user.user.name }'s Moves</h1>
+            <button type="submit" onClick={ () => alert('Not done yet') }>Traction League</button>
             <h2>Import Moves</h2>
             <input type="file" accepts=".csv" onChange={ handleFileChange } />
             <button type="submit" onClick={ handleFileSubmit }>
                 Import
             </button>
             <h2>Your Moves</h2>
+            <p>{ statsDisplay }</p>
             <div>
                 { movesDisplay }
             </div>

@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { Double } = require("mongodb");
+const fs = require('fs')
 require("dotenv").config({ path: "./config.env" });
 
 const app = express();
@@ -94,6 +94,17 @@ app.post("/moves", (req, res) => {
 app.get("/moves/:u", (req, res) => {
     Move.find({ user: req.params.u }, (err, moves) => {
         res.json(moves);
+    })
+});
+
+// get the list of every loco
+app.get("/alllocos", (req, res) => {
+    fs.readFile('./baseneeds.txt', 'utf-8', (err, locos) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.json(locos.split('\r\n'));
     })
 });
 
