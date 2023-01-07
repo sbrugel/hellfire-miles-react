@@ -47,6 +47,7 @@ const LoginPage = ({ setLoginUser }) => {
                 value={ user.name }
                 onChange={ handleChange }
                 placeholder="Username"
+                autocomplete="off"
               />
             </div>
             <div class="flex flex-col mb-6">
