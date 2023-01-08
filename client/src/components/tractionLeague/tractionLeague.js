@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const TractionLeague = (user) => {
     const [moves, setMoves] = useState([]); // the list of moves this user has done
-
     const [classDisplay, setClassDisplay] = useState(<p>Fetching data...</p>);
+    const [sortBy, setSortBy] = useState('mileage');
 
     const navigate = useNavigate();
 
@@ -20,7 +20,8 @@ const TractionLeague = (user) => {
 
     useEffect(() => {
         axios.get(`http://localhost:5000/allclasses`).then(async (res) => {
-            const classArray = []; // array of div elements holding buttons
+            const classArray = []; // array of data for each class
+            const divArray = []; // array of div elements holding buttons
             for (const classNum of res.data) {
                 const classData = moves.filter(
                     (m) => m.loco1.length === 5 && (m.loco1.startsWith(classNum) || m.loco2.startsWith(classNum) || m.loco3.startsWith(classNum) || m.loco4.startsWith(classNum))
@@ -61,28 +62,52 @@ const TractionLeague = (user) => {
                 let totalLocos = 0;
                 await axios.get(`http://localhost:5000/alllocos/${classNum}`).then((res) => {
                     totalLocos = res.data.length;
-                    classArray.push(
-                        <div class="grid-item" key={classNum} onClick={() => navigate(`/class?classNum=${classNum}`)} style={{
-                            backgroundColor: locos.length === totalLocos ? 'lightgreen' : 'white'
-                        }}>
-                            <h2>{ classNum }</h2>
-                            <p><strong>Journeys: </strong> { classData.length }</p>
-                            <p><strong>Miles: </strong> { Math.round(mileage) }</p>
-                            <p><strong>Cleared: </strong> { locos.length } / { totalLocos }</p>
-                        </div>
-                    )
+                    classArray.push({
+                        classNum: classNum,
+                        journeys: classData.length,
+                        mileage: Math.round(mileage * 100) / 100,
+                        numLocos: locos.length,
+                        totalLocos: totalLocos
+                    });
                 });
             }
-            setClassDisplay(classArray);
+
+            if (sortBy === 'mileage') {
+                classArray.sort((a, b) => b.mileage - a.mileage);
+            } else if (sortBy === 'journeys') {
+                classArray.sort((a, b) => b.journeys - a.journeys);
+            } else if (sortBy === 'class')  {
+                classArray.sort((a, b) => a.classNum - b.classNum);
+            }
+
+            for (const c of classArray) {
+                divArray.push(
+                    <div class="grid-item" key={ c.classNum } onClick={() => navigate(`/class?classNum=${ c.classNum }`)} style={{
+                        backgroundColor: c.numLocos === c.totalLocos ? 'lightgreen' : 'white'
+                    }}>
+                        <h2>{ c.classNum }</h2>
+                        <p><strong>Journeys: </strong> { c.journeys }</p>
+                        <p><strong>Miles: </strong> { c.mileage }</p>
+                        <p><strong>Cleared: </strong> { c.numLocos } / { c.totalLocos }</p>
+                    </div>
+                )
+            }
+            setClassDisplay(divArray);
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [moves]);
+    }, [moves, sortBy]);
     
     return (
         <>
             <h1>{ user.user.name }'s Traction League</h1>
             <button type="submit" onClick={ () => navigate("/") }>Moves List</button>
-            <p>Placeholder <input type="text" maxlength="2" onChange={ () => console.log('df') } /></p>
+            <p>
+                Sort by: <select onChange={ (e) => setSortBy(e.target.value.toLowerCase()) }>
+                    <option name="mileage">Mileage</option>
+                    <option name="class">Class</option>
+                    <option name="journeys">Journeys</option>
+                </select>
+            </p>
             <div class="grid-container">
                 { classDisplay }
             </div>

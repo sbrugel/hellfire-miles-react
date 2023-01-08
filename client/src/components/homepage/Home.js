@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { useSelector, useDispatch } from "react-redux";
-import { updateData } from '../../store/filterInputSlice';
+import { updateData } from '../../store/homeFilterSlice';
 
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const HomePage = (user) => {
     const [locoFilter, setLocoFilter] = useState('');
 
     const dispatch = useDispatch();
-    const filter = useSelector((state) => state.filter);
+    const filter = useSelector((state) => state.homeFilter);
 
     const navigate = useNavigate();
 
@@ -97,7 +97,7 @@ const HomePage = (user) => {
                     }
                 }
             }
-            setStatsDisplay(data.length > 0 ? `You have been on ${data.length} journeys on ${locos.length} different locos, totalling ${Math.round(mileage)} miles` : '');
+            setStatsDisplay(data.length > 0 ? `You have been on ${data.length} journeys on ${locos.length} different locos, totalling ${Math.round(mileage * 100) / 100} miles` : '');
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [moves, filter.classFilter, filter.locoFilter]);

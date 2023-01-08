@@ -3,11 +3,12 @@ import axios from 'axios';
 
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-const ClassPage = (user, classNum) => {
+const ClassPage = (user) => {
     const [searchParams, ] = useSearchParams();
     const cNum = searchParams.get('classNum');
 
     const [moves, setMoves] = useState([]);
+    const [sortBy, setSortBy] = useState('loco');
 
     const [locosDisplay, setLocosDisplay] = useState(<p>Fetching data...</p>)
 
@@ -23,7 +24,8 @@ const ClassPage = (user, classNum) => {
 
     useEffect(() => {
         axios.get(`http://localhost:5000/alllocos/${cNum}`).then(async (res) => {
-            const locoArray = []; // table to show
+            const locoArray = []; // data for each loco
+            const tableArray = []; // table to show
             for (const loco of res.data) {
                 const locoData = moves.filter((m) => m.loco1 === loco || m.loco2 === loco || m.loco3 === loco || m.loco4 === loco);
 
@@ -32,24 +34,47 @@ const ClassPage = (user, classNum) => {
                     mileage += move.mileage;
                 }
 
-                locoArray.push(
-                    <tr key={ loco }  style={{ backgroundColor: locoData.length !== 0 ? 'lightgreen' : 'white' }}>
-                        <td>{ loco }</td>
-                        <td>{ locoData.length }</td>
-                        <td>{ Math.round(mileage) }</td>
+                locoArray.push({
+                    loco: loco,
+                    journeys: locoData.length,
+                    mileage: Math.round(mileage * 100) / 100,
+                });
+
+                
+            }
+            if (sortBy === 'mileage') {
+                locoArray.sort((a, b) => b.mileage - a.mileage);
+            } else if (sortBy === 'journeys') {
+                locoArray.sort((a, b) => b.journeys - a.journeys);
+            } else if (sortBy === 'loco')  {
+                locoArray.sort((a, b) => a.loco - b.loco);
+            }
+
+            for (const l of locoArray) {
+                tableArray.push(
+                    <tr key={ l.loco }  style={{ backgroundColor: l.journeys !== 0 ? 'lightgreen' : 'white' }}>
+                        <td>{ l.loco }</td>
+                        <td>{ l.journeys }</td>
+                        <td>{ l.mileage }</td>
                     </tr>
                 )
             }
-            setLocosDisplay(<table><th>Loco</th><th># of Journeys</th><th>Mileage</th>{ locoArray }</table>);
+            setLocosDisplay(<table><th>Loco</th><th># of Journeys</th><th>Mileage</th>{ tableArray }</table>);
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [moves])
+    }, [moves, sortBy])
 
     return (
         <>
             <h1>{ user.user.name }'s Class { cNum } Stats</h1>
             <button type="submit" onClick={ () => navigate("/tractionleague") }>Back</button>
-            <p>Placeholder <input type="text" maxlength="2" onChange={ () => console.log('df') } /></p>
+            <p>
+                Sort by: <select onChange={ (e) => setSortBy(e.target.value.toLowerCase()) }>
+                    <option name="loco">Loco</option>
+                    <option name="mileage">Mileage</option>
+                    <option name="journeys">Journeys</option>
+                </select>
+            </p>
             <div>
                 { locosDisplay }
             </div>

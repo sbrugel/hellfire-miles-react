@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import filterInputSlice from './filterInputSlice';
+import homeFilterSlice from './homeFilterSlice';
 
 export default configureStore({
     reducer: {
-        filter: filterInputSlice
+        homeFilter: homeFilterSlice
     },
 });

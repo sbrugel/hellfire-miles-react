@@ -5,8 +5,8 @@ export const initialState = {
     locoFilter: ''
 }
 
-export const filterInputSlice = createSlice({
-    name: 'filter',
+export const homeFilterSlice = createSlice({
+    name: 'homeFilter',
     initialState,
     reducers: {
         updateData: (state, action) => {
@@ -17,6 +17,6 @@ export const filterInputSlice = createSlice({
     }
 });
 
-export const { updateData } = filterInputSlice.actions;
+export const { updateData } = homeFilterSlice.actions;
 
-export default filterInputSlice.reducer;
+export default homeFilterSlice.reducer;
