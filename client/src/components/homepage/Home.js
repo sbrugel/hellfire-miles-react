@@ -4,6 +4,8 @@ import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux";
 import { updateData } from '../../store/filterInputSlice';
 
+import { useNavigate } from "react-router-dom";
+
 const HomePage = (user) => {
     const fileReader = new FileReader();
     const [file, setFile] = useState({}); // selected file to be imported
@@ -19,6 +21,8 @@ const HomePage = (user) => {
     const dispatch = useDispatch();
     const filter = useSelector((state) => state.filter);
 
+    const navigate = useNavigate();
+
     // on page load, get moves from this user
     useEffect(() => {
         axios.get(`http://localhost:5000/moves/${user.user.name}`).then((res) => {
@@ -29,7 +33,7 @@ const HomePage = (user) => {
 
     // whenever moves update (i.e. we upload new moves), update display
     useEffect(() => {
-        console.log('moves updating')
+        setMovesDisplay(<p>Fetching moves...</p>)
         axios.get(`http://localhost:5000/moves/${user.user.name}`).then((moves) => {
             let displayData = moves.data; // what will actually be shown, based on what the filters are set to
             if (filter.classFilter) {
@@ -185,7 +189,7 @@ const HomePage = (user) => {
     return (
         <>
             <h1>{ user.user.name }'s Moves</h1>
-            <button type="submit" onClick={ () => alert('Not done yet') }>Traction League</button>
+            <button type="submit" onClick={ () => navigate("/tractionleague") }>Traction League</button>
             <h2>Import Moves</h2>
             <input type="file" accepts=".csv" onChange={ handleFileChange } />
             <button type="submit" onClick={ handleFileSubmit }>Import</button>

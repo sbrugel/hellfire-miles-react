@@ -97,6 +97,17 @@ app.get("/moves/:u", (req, res) => {
     })
 });
 
+// get the list of every class
+app.get("/allclasses", (req, res) => {
+    fs.readFile('./classes.txt', 'utf-8', (err, classes) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.json(classes.split('\r\n'));
+    })
+});
+
 // get the list of every loco
 app.get("/alllocos", (req, res) => {
     fs.readFile('./baseneeds.txt', 'utf-8', (err, locos) => {
@@ -105,6 +116,17 @@ app.get("/alllocos", (req, res) => {
             return;
         }
         res.json(locos.split('\r\n'));
+    })
+});
+
+// get the list of every loco of a certain class
+app.get("/alllocos/:c", (req, res) => {
+    fs.readFile('./baseneeds.txt', 'utf-8', (err, locos) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.json(locos.split('\r\n').filter((l) => l.startsWith(req.params.c)));
     })
 });
 
