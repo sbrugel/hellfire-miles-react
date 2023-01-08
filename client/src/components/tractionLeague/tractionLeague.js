@@ -32,21 +32,29 @@ const TractionLeague = (user) => {
                 for (const move of classData) {
                     mileage += move.mileage;
                     if (!locos.includes(move.loco1) && move.loco1.length === 5) { // length check to see if its an actual loco, not a D/EMU or other transport
-                        locos.push(move.loco1);
+                        if (move.loco1.startsWith(classNum)) {
+                            locos.push(move.loco1);
+                        }
                     }
                     if (move.loco2) {
                         if (!locos.includes(move.loco2)) {
-                            locos.push(move.loco2);
+                            if (move.loco2.startsWith(classNum)) {
+                                locos.push(move.loco2);
+                            }
                         }
                     }
                     if (move.loco3) {
                         if (!locos.includes(move.loco3)) {
-                            locos.push(move.loco3);
+                            if (move.loco3.startsWith(classNum)) {
+                                locos.push(move.loco3);
+                            }
                         }
                     }
                     if (move.loco4) {
                         if (!locos.includes(move.loco4)) {
-                            locos.push(move.loco4);
+                            if (move.loco4.startsWith(classNum)) {
+                                locos.push(move.loco4);
+                            }
                         }
                     }
                 }

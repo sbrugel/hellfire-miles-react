@@ -36,12 +36,14 @@ const HomePage = (user) => {
         setMovesDisplay(<p>Fetching moves...</p>)
         axios.get(`http://localhost:5000/moves/${user.user.name}`).then((moves) => {
             let displayData = moves.data; // what will actually be shown, based on what the filters are set to
-            if (filter.classFilter) {
-                displayData = displayData.filter((m) => m.loco1.startsWith(filter.classFilter) || m.loco2.startsWith(filter.classFilter) || m.loco3.startsWith(filter.classFilter) || m.loco4.startsWith(filter.classFilter));
+            const { classFilter, locoFilter } = filter;
+
+            if (classFilter) {
+                displayData = displayData.filter((m) => m.loco1.startsWith(classFilter) || m.loco2.startsWith(classFilter) || m.loco3.startsWith(classFilter) || m.loco4.startsWith(classFilter));
                 displayData = displayData.filter((m) => m.loco1.length === 5); // get rid of non-loco moves
             }
-            if (filter.locoFilter) {
-                displayData = displayData.filter((m) => m.loco1 === filter.locoFilter || m.loco2 === filter.locoFilter || m.loco3 === filter.locoFilter || m.loco4 === filter.locoFilter);
+            if (locoFilter) {
+                displayData = displayData.filter((m) => m.loco1 === locoFilter || m.loco2 === locoFilter || m.loco3 === locoFilter || m.loco4 === locoFilter);
             }
             let data = displayData.map((m) => 
                 <tr key={m._id}>
@@ -62,21 +64,29 @@ const HomePage = (user) => {
             for (const move of displayData) {
                 mileage += move.mileage;
                 if (!locos.includes(move.loco1) && move.loco1.length === 5) { // length check to see if its an actual loco, not a D/EMU or other transport
-                    locos.push(move.loco1);
+                    if ((classFilter && move.loco1.startsWith(classFilter)) || (locoFilter && move.loco1 ===  locoFilter) || (!classFilter && !locoFilter)) {
+                        locos.push(move.loco1);
+                    }
                 }
                 if (move.loco2) {
                     if (!locos.includes(move.loco2)) {
-                        locos.push(move.loco2);
+                        if ((classFilter && move.loco2.startsWith(classFilter)) || (locoFilter && move.loco2 ===  locoFilter) || (!classFilter && !locoFilter)) {
+                            locos.push(move.loco2);
+                        }
                     }
                 }
                 if (move.loco3) {
                     if (!locos.includes(move.loco3)) {
-                        locos.push(move.loco3);
+                        if ((classFilter && move.loco3.startsWith(classFilter)) || (locoFilter && move.loco3 ===  locoFilter) || (!classFilter && !locoFilter)) {
+                            locos.push(move.loco3);
+                        }
                     }
                 }
                 if (move.loco4) {
                     if (!locos.includes(move.loco4)) {
-                        locos.push(move.loco4);
+                        if ((classFilter && move.loco4.startsWith(classFilter)) || (locoFilter && move.loco4 ===  locoFilter) || (!classFilter && !locoFilter)) {
+                            locos.push(move.loco4);
+                        }
                     }
                 }
             }
