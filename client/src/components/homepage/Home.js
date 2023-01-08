@@ -25,6 +25,13 @@ const HomePage = (user) => {
 
     // on page load, get moves from this user
     useEffect(() => {
+        dispatch(
+            updateData({
+                classFilter: classFilter,
+                locoFilter: locoFilter
+            })
+        )
+
         axios.get(`http://localhost:5000/moves/${user.user.name}`).then((res) => {
             setMoves(res.data);
         });

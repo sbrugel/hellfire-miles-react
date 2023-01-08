@@ -6,13 +6,12 @@ import { useNavigate } from "react-router-dom";
 const TractionLeague = (user) => {
     const [moves, setMoves] = useState([]); // the list of moves this user has done
 
-    const [classDisplay, setClassDisplay] = useState([]);
+    const [classDisplay, setClassDisplay] = useState(<p>Fetching data...</p>);
 
     const navigate = useNavigate();
 
     // on page load, get moves and show traction rankings
     useEffect(() => {
-        setClassDisplay(<p>Fetching data...</p>)
         axios.get(`http://localhost:5000/moves/${user.user.name}`).then((res) => {
             setMoves(res.data);
         });
@@ -63,7 +62,7 @@ const TractionLeague = (user) => {
                 await axios.get(`http://localhost:5000/alllocos/${classNum}`).then((res) => {
                     totalLocos = res.data.length;
                     classArray.push(
-                        <div class="grid-item" key={classNum} style={{
+                        <div class="grid-item" key={classNum} onClick={() => navigate(`/class?classNum=${classNum}`)} style={{
                             backgroundColor: locos.length === totalLocos ? 'lightgreen' : 'white'
                         }}>
                             <h2>{ classNum }</h2>
@@ -76,12 +75,14 @@ const TractionLeague = (user) => {
             }
             setClassDisplay(classArray);
         });
-    }, [moves])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [moves]);
     
     return (
         <>
             <h1>{ user.user.name }'s Traction League</h1>
             <button type="submit" onClick={ () => navigate("/") }>Moves List</button>
+            <p>Placeholder <input type="text" maxlength="2" onChange={ () => console.log('df') } /></p>
             <div class="grid-container">
                 { classDisplay }
             </div>
