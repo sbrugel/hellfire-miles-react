@@ -4,11 +4,14 @@ import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux";
 import { updateData } from '../../store/homeFilterSlice';
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const HomePage = (user) => {
     const fileReader = new FileReader();
-    const [file, setFile] = useState({}); // selected file to be imported
+    const [file, setFile] = useState(null); // selected file to be imported
 
     const [moves, setMoves] = useState([]); // the list of moves this user has done
     const [movesDisplay, setMovesDisplay] = useState([]); // the moves as they are displayed on the page (INCLUDES <p> tags)
@@ -23,12 +26,17 @@ const HomePage = (user) => {
 
     const navigate = useNavigate();
 
+    // optional query parameters - at most, one will be filled at a time; loco number gets priority
+    const [searchParams, ] = useSearchParams();
+    const cNum = searchParams.get('classNum');
+    const lNum = searchParams.get('locoNum');
+
     // on page load, get moves from this user
     useEffect(() => {
         dispatch(
             updateData({
-                classFilter: classFilter,
-                locoFilter: locoFilter
+                classFilter: cNum || '',
+                locoFilter: lNum || ''
             })
         )
 
@@ -37,6 +45,28 @@ const HomePage = (user) => {
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // eslint-disable-next-line no-unused-vars
+    const filterAndRefreshByClass = (c) => {
+        setClassFilter(c);
+        dispatch(
+            updateData({
+                classFilter: c
+            })
+        )
+    }
+
+    const filterAndRefreshByLoco = (loco) => {
+        if (loco.length !== 5) {
+            return; // not a loco
+        }
+        setLocoFilter(loco);
+        dispatch(
+            updateData({
+                locoFilter: loco
+            })
+        )
+    }
 
     // whenever moves update (i.e. we upload new moves), update display
     useEffect(() => {
@@ -54,10 +84,10 @@ const HomePage = (user) => {
             }
             let data = displayData.map((m) => 
                 <tr key={m._id}>
-                    <td>{<b>{m.loco1}</b>}</td>
-                    <td>{m.loco2 ? <b>{m.loco2}</b> : 'None'}</td>
-                    <td>{m.loco3 ? <b>{m.loco3}</b> : 'None'}</td>
-                    <td>{m.loco4 ? <b>{m.loco4}</b> : 'None'}</td>
+                    <td onClick={ () => filterAndRefreshByLoco(m.loco1) }>{<b>{m.loco1}</b>}</td>
+                    <td onClick={ () => filterAndRefreshByLoco(m.loco2) }>{m.loco2 ? <b>{m.loco2}</b> : <span style={{ color: '#b8b8b8' }}>None</span>}</td>
+                    <td onClick={ () => filterAndRefreshByLoco(m.loco3) }>{m.loco3 ? <b>{m.loco3}</b> : <span style={{ color: '#b8b8b8' }}>None</span>}</td>
+                    <td onClick={ () => filterAndRefreshByLoco(m.loco4) }>{m.loco4 ? <b>{m.loco4}</b> : <span style={{ color: '#b8b8b8' }}>None</span>}</td>
                     <td>{m.start}</td>
                     <td>{m.end}</td>
                     <td>{m.service}</td>
@@ -171,12 +201,33 @@ const HomePage = (user) => {
     const handleFileSubmit = (e) => {
         e.preventDefault();
 
+        toast.info(`Processing file...`);
+
         if (file) {
             let movesArray, movesAdded = 0;
             fileReader.onload = async function (event) {
                 const newMoves = [];
+                const errorToast = () => 
+                    toast.error(`Detected an invalid Hellfire CSV file. Please ensure you are using a file exported from the game. If you believe this is an error, please contact the developer.`, {
+                        autoClose: 10000
+                    });
                 movesArray = csvFileToArray(event.target.result);
                 for (const move of movesArray) {
+                    if (Object.keys(move).length !== 11) {
+                        errorToast();
+                        break;
+                    } else {
+                        const keys = ['Day', 'Loco1', 'Loco2', 'Loco3', 'Loco4', 'Mileage\r', 'To', 'Train', 'Headcode'];
+                        let error = false;
+                        for (const key of keys) {
+                            if (!Object.hasOwn(move, key)) {
+                                errorToast();
+                                error = true;
+                                break;
+                            }
+                        }
+                        if (error) break;
+                    }
                     if (!move.Loco1) continue; // empty move
                     const m = {
                         user: user.user.name,
@@ -194,12 +245,12 @@ const HomePage = (user) => {
                     movesAdded++;
                 }
                 setMoves([...moves, newMoves]);
-                alert(`Added ${movesAdded} new moves!`);
+                toast.success(`Added ${movesAdded} new moves!`);
             }
 
             fileReader.readAsText(file);
         } else {
-            alert("You haven't uploaded a CSV!");
+            toast.error(`You haven't uploaded a CSV!`);
         }
     }
 
@@ -218,6 +269,7 @@ const HomePage = (user) => {
             <div>
                 { movesDisplay }
             </div>
+            <ToastContainer />
         </>
     )
 }

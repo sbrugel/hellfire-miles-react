@@ -23,7 +23,7 @@ const ClassPage = (user) => {
     }, []);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/alllocos/${cNum}`).then(async (res) => {
+        axios.get(`http://localhost:5000/alllocos${cNum !== 'ALL' ? `/${cNum}` : ''}`).then(async (res) => {
             const locoArray = []; // data for each loco
             const tableArray = []; // table to show
             for (const loco of res.data) {
@@ -40,7 +40,6 @@ const ClassPage = (user) => {
                     mileage: Math.round(mileage * 100) / 100,
                 });
 
-                
             }
             if (sortBy === 'mileage') {
                 locoArray.sort((a, b) => b.mileage - a.mileage);
@@ -53,7 +52,7 @@ const ClassPage = (user) => {
             for (const l of locoArray) {
                 tableArray.push(
                     <tr key={ l.loco }  style={{ backgroundColor: l.journeys !== 0 ? 'lightgreen' : 'white' }}>
-                        <td>{ l.loco }</td>
+                        <td onClick={ () => navigate(`/?locoNum=${l.loco}`) }>{ l.loco }</td>
                         <td>{ l.journeys }</td>
                         <td>{ l.mileage }</td>
                     </tr>

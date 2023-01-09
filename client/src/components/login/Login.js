@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const LoginPage = ({ setLoginUser }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -20,11 +23,11 @@ const LoginPage = ({ setLoginUser }) => {
   const login = () => {
     const { name, password } = user;
     if (!name || !password) {
-      alert("Missing a field!");
+      toast.error("Missing a field!");
       return;
     }
     axios.post("http://localhost:5000/login", user).then((res) => {
-      alert(res.data.message);
+      toast(res.data.message);
       setLoginUser(res.data.user);
       navigate("/");
     });
@@ -71,6 +74,7 @@ const LoginPage = ({ setLoginUser }) => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

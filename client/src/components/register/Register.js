@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const RegisterPage = () => {
   const [user, setUser] = useState({
     name: "",
@@ -16,13 +19,15 @@ const RegisterPage = () => {
     });
   };
 
-  const register = () => {
+  const register = (e) => {
+    e.preventDefault();
+
     const { name, email, password } = user;
     if (name && email && password) {
       axios
         .post("http://localhost:5000/register", user)
     } else {
-      alert("You are missing a field!");
+      toast.error("Missing a field!");
     }
   };
 
@@ -74,6 +79,7 @@ const RegisterPage = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };

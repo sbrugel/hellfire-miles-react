@@ -22,6 +22,9 @@ const TractionLeague = (user) => {
         axios.get(`http://localhost:5000/allclasses`).then(async (res) => {
             const classArray = []; // array of data for each class
             const divArray = []; // array of div elements holding buttons
+
+            let totalMileage = 0, totalCleared = 0;
+
             for (const classNum of res.data) {
                 const classData = moves.filter(
                     (m) => m.loco1.length === 5 && (m.loco1.startsWith(classNum) || m.loco2.startsWith(classNum) || m.loco3.startsWith(classNum) || m.loco4.startsWith(classNum))
@@ -31,15 +34,18 @@ const TractionLeague = (user) => {
                 const locos = [];
                 for (const move of classData) {
                     mileage += move.mileage;
+                    totalMileage += move.mileage;
                     if (!locos.includes(move.loco1) && move.loco1.length === 5) { // length check to see if its an actual loco, not a D/EMU or other transport
                         if (move.loco1.startsWith(classNum)) {
                             locos.push(move.loco1);
+                            totalCleared++;
                         }
                     }
                     if (move.loco2) {
                         if (!locos.includes(move.loco2)) {
                             if (move.loco2.startsWith(classNum)) {
                                 locos.push(move.loco2);
+                                totalCleared++;
                             }
                         }
                     }
@@ -47,6 +53,7 @@ const TractionLeague = (user) => {
                         if (!locos.includes(move.loco3)) {
                             if (move.loco3.startsWith(classNum)) {
                                 locos.push(move.loco3);
+                                totalCleared++;
                             }
                         }
                     }
@@ -54,6 +61,7 @@ const TractionLeague = (user) => {
                         if (!locos.includes(move.loco4)) {
                             if (move.loco4.startsWith(classNum)) {
                                 locos.push(move.loco4);
+                                totalCleared++;
                             }
                         }
                     }
@@ -88,11 +96,23 @@ const TractionLeague = (user) => {
                         <h2>{ c.classNum }</h2>
                         <p><strong>Journeys: </strong> { c.journeys }</p>
                         <p><strong>Miles: </strong> { c.mileage }</p>
-                        <p><strong>Cleared: </strong> { c.numLocos } / { c.totalLocos }</p>
+                        <p><strong>Cleared: </strong> { c.numLocos } / { c.totalLocos } ({ Math.round((c.numLocos / c.totalLocos) * 100) }%)</p>
                     </div>
                 )
             }
-            setClassDisplay(divArray);
+            await axios.get(`http://localhost:5000/alllocos`).then((res) => {
+                divArray.unshift(
+                    <div class="grid-item" key={ 'all' } onClick={() => navigate(`/class?classNum=ALL`)} style={{
+                        backgroundColor: totalCleared === res.data.length ? 'lightgreen' : 'white'
+                    }}>
+                        <h2>ALL</h2>
+                        <p><strong>Journeys: </strong> { moves.length }</p>
+                        <p><strong>Miles: </strong> { Math.round(totalMileage * 100) / 100 }</p>
+                        <p><strong>Cleared: </strong> { totalCleared } / { res.data.length } ({ Math.round((totalCleared / res.data.length) * 100) }%)</p>
+                    </div>
+                )
+                setClassDisplay(divArray);
+            });
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [moves, sortBy]);
