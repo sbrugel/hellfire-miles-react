@@ -25,7 +25,9 @@ const RegisterPage = () => {
     const { name, email, password } = user;
     if (name && email && password) {
       axios
-        .post("http://localhost:5000/register", user)
+        .post("http://localhost:5000/register", user).then((res) => {
+          toast(res.data.message);
+        })
     } else {
       toast.error("Missing a field!");
     }
@@ -45,6 +47,7 @@ const RegisterPage = () => {
                     name="name"
                     value={ user.name }
                     onChange={ handleChange }
+                    autocomplete="off"
                     placeholder="Username"
                 />
             </div>
@@ -55,6 +58,7 @@ const RegisterPage = () => {
                   name="email"
                   value={ user.email }
                   onChange={ handleChange }
+                  autocomplete="off"
                   placeholder="Email"
                 />
             </div>

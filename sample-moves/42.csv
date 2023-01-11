@@ -1,0 +1,82 @@
+Day,Loco1,Loco2,Loco3,Loco4,From,To,Headcode,Train,TrainStartDay,Mileage
+Monday,37075,,,,Ely,London Liverpool St,1N51,2247 Norwich - Liverpool St,Sunday,72.80
+Monday,Taxi,,,,London Liverpool St,London Victoria,,,,
+Monday,73125,,,,London Victoria,Folkestone Central,1V02,0330 Victoria - Dover W. Docks,Monday,70.99
+Monday,SR EMU,,,,Folkestone Central,Tonbridge,2W12,0523 Ramsgate - Charing Cross,Monday,40.39
+Monday,SR EMU,,,,Tonbridge,London Bridge,2W10,0500 Ramsgate - Charing Cross,Monday,27.65
+Monday,Tube,,,,London Bridge,London Victoria,,,,
+Monday,SR EMU,,,,London Victoria,Clapham Jn Brighton Line,2J65,0757 Victoria - West Croydon via Crystal Palace,Monday,2.66
+Monday,33209,,,,Clapham Jn Brighton Line,Kensington Olympia,2M00,0812 Clapham Jn - Kensington O.,Monday,3.40
+Monday,Tube,,,,Kensington Olympia,Ealing Broadway,,,,
+Monday,DMU,,,,Ealing Broadway,London Paddington,2A04,0759 Bourne End - Paddington,Monday,5.64
+Monday,47501,,,,London Paddington,Reading,1C16,0927 Paddington - Fishguard Harbour,Monday,35.91
+Monday,50035,,,,Reading,London Paddington,1V18,0825 Birmingham NS - Paddington,Monday,35.91
+Monday,50019,,,,London Paddington,Oxford,1B58,1050 Paddington - Worcester SH,Monday,63.34
+Monday,47434,,,,Oxford,Basingstoke,1O13,0812 Leeds - Weymouth,Monday,41.86
+Monday,33118,,,,Basingstoke,London Waterloo,1L92,1310 Salisbury - Waterloo,Monday,47.76
+Monday,Tube,,,,London Waterloo,London Paddington,,,,
+Monday,47901,,,,London Paddington,Cheltenham Spa,1B28,1727 Paddington - Cheltenham,Monday,120.50
+Monday,47901,,,,Cheltenham Spa,Bristol Temple Meads,2B79,2126 Cheltenham - Bristol TM,Monday,44.46
+Tuesday,45044,,,,Bristol Temple Meads,Worcester SH,1E61,0110 Bristol TM - Sheffield,Tuesday,68.99
+Tuesday,46010,,,,Worcester SH,Bristol Temple Meads,1V50,2000 Newcastle - Bristol TM,Monday,68.99
+Tuesday,50045,,,,Bristol Temple Meads,Westbury,2B01,0520 Bristol TM - Westbury,Tuesday,28.26
+Tuesday,50045,,,,Westbury,Reading,1A33,0642 Westbury - Paddington,Tuesday,59.61
+Tuesday,47330,,,,Reading,Birmingham New St,1M38,0625 Poole - Birmingham NS,Tuesday,98.29
+Tuesday,86010,,,,Birmingham New St,London Euston,1A31,0940 Shrewsbury - Euston,Tuesday,112.91
+Tuesday,86255,,,,London Euston,Birmingham New St,1G30,1240 Euston - Wolverhampton,Tuesday,112.91
+Tuesday,46052,,,,Birmingham New St,Derby,1E27,0955 Weymouth - Leeds,Tuesday,41.23
+Tuesday,37059,,,,Derby,Bristol Temple Meads,1V91,1143 Newcastle - Bristol TM,Tuesday,131.15
+Tuesday,33012,,,,Bristol Temple Meads,Weston Super Mare,2B56,1756 Bristol TM - Weston SM,Tuesday,19.03
+Tuesday,37135,,,,Weston Super Mare,Cheltenham Spa,2B49,1840 Weston SM - Worcester SH,Tuesday,66.06
+Tuesday,47475,,,,Cheltenham Spa,Bromsgrove Signal G71,1S19,2126 Bristol TM - Glasgow Central,Tuesday,31.25
+Tuesday,47475,37244,37254,,Bromsgrove Signal G71,Blackwell,1S19,2126 Bristol TM - Glasgow Central,Tuesday,2.76
+Tuesday,47475,,,,Blackwell,Birmingham New St,1S19,2126 Bristol TM - Glasgow Central,Tuesday,11.45
+Tuesday,83001,,,,Birmingham New St,Wolverhampton,1S19,2126 Bristol TM - Glasgow Central,Tuesday,12.88
+Wednesday,83001,,,,Wolverhampton,Crewe,1S19,2126 Bristol TM - Glasgow Central,Tuesday,40.64
+Wednesday,47437,,,,Crewe,Bangor,1D02,0223 Crewe - Holyhead,Wednesday,80.89
+Wednesday,40097,,,,Bangor,Oxford,1Z33,0708 Mystery Excursion from Bangor,Wednesday,202.50
+Wednesday,50008,,,,Oxford,Worcester SH,1B58,1050 Paddington - Worcester SH,Wednesday,56.54
+Wednesday,DMU,,,,Worcester SH,Hereford,2V75,1230 Birmingham NS - Hereford,Wednesday,29.35
+Wednesday,33022,,,,Hereford,Cardiff Central,1V05,1227 Crewe - Cardiff,Wednesday,55.20
+Wednesday,47134,,,,Cardiff Central,London Paddington,1A39,1320 Fishguard Harbour - Paddington,Wednesday,145.13
+Wednesday,31259,31121,,,London Paddington,Oxford,1A46,1806 Paddington - Oxford,Wednesday,63.45
+Wednesday,50031,,,,Oxford,London Paddington,1V64,1623 Manchester Picc. - Paddington,Wednesday,63.34
+Wednesday,47134,,,,London Paddington,Cardiff Central,1C82,2133 Paddington - Fishguard Harbour,Wednesday,145.13
+Thursday,47111,,,,Cardiff Central,Swansea,1C02,0124 Bristol TM - Milford Haven,Thursday,45.71
+Thursday,37267,,,,Swansea,Carmarthen,1C02,0124 Bristol TM - Milford Haven,Thursday,31.59
+Thursday,37180,,,,Carmarthen,Whitland,1C02,0124 Bristol TM - Milford Haven,Thursday,14.08
+Thursday,47401,,,,Whitland,Clunderwen,1C04,0050 Paddington - Milford Haven,Thursday,5.35
+Thursday,37180,,,,Clunderwen,Swansea,2C53,0730 Milford Haven - Swansea,Thursday,51.01
+Thursday,HST,,,,Swansea,London Paddington,1A27,0942 Swansea - Paddington,Thursday,190.84
+Thursday,Tube,,,,London Paddington,London Kings Cross,,,,
+Thursday,47461,,,,London Kings Cross,Peterborough,1D03,1305 Kings Cross - Cleethorpes,Thursday,76.36
+Thursday,55015,,,,Peterborough,Grantham,1L43,1403 Kings Cross - York,Thursday,29.10
+Thursday,120 DMU,,,,Grantham,Skegness,2E78,1410 Derby - Skegness,Thursday,55.64
+Thursday,31167,,,,Skegness,Boston,1J27,1726 Skegness - Sheffield,Thursday,23.61
+Thursday,20006,20164,,,Boston,Nottingham,1M07,1820 Skegness - Nottingham,Thursday,50.78
+Thursday,31147,31240,,,Nottingham,Beeston,1M47,1840 Skegness - Burton,Thursday,3.31
+Thursday,31270,31120,,,Beeston,Leicester,1M22,1853 Skegness - Leicester,Thursday,24.19
+Thursday,31179,,,,Leicester,Birmingham New St,1M76,1834 Norwich - Birmingham NS,Thursday,39.85
+Thursday,86319,,,,Birmingham New St,Wolverhampton,1G47,2140 Euston - Wolverhampton,Thursday,12.88
+Friday,86002,,,,Wolverhampton,Glasgow Central,1S19,2126 Bristol TM - Glasgow Central,Thursday,283.80
+Friday,Walk,,,,Glasgow Central,Glasgow Queen St,,,,
+Friday,37027,,,,Glasgow Queen St,Arrochar & Tarbet,1B08,0806 Glasgow Qn St - Oban,Friday,41.65
+Friday,37081,,,,Arrochar & Tarbet,Glasgow Queen St,1T16,0740 Oban - Glasgow Qn St,Friday,41.65
+Friday,40160,,,,Glasgow Queen St,Dundee,1A31,1135 Glasgow Qn St - Aberdeen,Friday,83.44
+Friday,101 DMU,,,,Dundee,Haymarket,2G62,1250 Arbroath - Edinburgh,Friday,57.95
+Friday,101 DMU,,,,Haymarket,Edinburgh Waverley,2G63,1425 Cowdenbeath - Edinburgh,Friday,1.23
+Friday,47706,,,,Edinburgh Waverley,Glasgow Queen St,1O42,1500 Edinburgh - Glasgow Qn St,Friday,47.26
+Friday,47701,,,,Glasgow Queen St,Haymarket,1O45,1630 Glasgow Qn St - Edinburgh,Friday,46.04
+Friday,40157,,,,Haymarket,Edinburgh Waverley,1G80,1440 Aberdeen - Edinburgh,Friday,1.23
+Friday,47702,,,,Edinburgh Waverley,Haymarket,1C93,1735 Edinburgh - Birmingham NS,Friday,1.23
+Friday,47268,,,,Haymarket,Edinburgh Waverley,1G83,1345 Liverpool - Edinburgh,Friday,1.23
+Friday,47272,,,,Edinburgh Waverley,Haymarket,1O54,1800 Edinburgh - Glasgow Qn St,Friday,1.23
+Friday,101 DMU,,,,Haymarket,Edinburgh Waverley,2G87,1750 Kirkcaldy - Edinburgh,Friday,1.23
+Friday,HST,,,,Edinburgh Waverley,York,1E25,1900 Edinburgh - Leeds,Friday,204.60
+Friday,40086,,,,York,Dewsbury,1M41,2208 York - Shrewsbury,Friday,34.68
+Saturday,40124,40036,,,Dewsbury,Plymouth,1Z80,0542 The 'China Clay Dart' Railtour,Saturday,330.39
+Saturday,37142,37299,,,Plymouth,Parkandillack,1Z80,1314 The 'China Clay Dart' Railtour,Saturday,46.58
+Saturday,37142,37299,,,Parkandillack,Plymouth,1Z81,1500 The 'China Clay Dart' Railtour,Saturday,46.58
+Saturday,50034,,,,Plymouth,Exeter St Davids,1M74,1400 Penzance - Birmingham NS,Saturday,52.04
+Saturday,50010,,,,Exeter St Davids,Basingstoke,1O24,1820 Exeter St Davids - Waterloo,Saturday,124.71
+Saturday,33003,,,,Basingstoke,Salisbury,1L97,2210 Waterloo - Salisbury,Saturday,36.03

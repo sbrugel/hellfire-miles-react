@@ -1,0 +1,102 @@
+Day,Loco1,Loco2,Loco3,Loco4,From,To,Headcode,Train,TrainStartDay,Mileage
+Monday,31326,,,,Ely,Ipswich,1P11,2320 Peterborough - Ipswich (Liv St),Sunday,50.76
+Monday,03179,,,,Ipswich,Ipswich,1P11,2320 Peterborough - Ipswich,Sunday,0.50
+Monday,47549,,,,Ipswich,London Liverpool St,1N49,2345 Norwich - Liverpool St,Sunday,68.74
+Monday,Walk,,,,London Liverpool St,London Fenchurch Street,,,,
+Monday,302 EMU,,,,London Fenchurch Street,Shoeburyness,2112,0515 Fenchurch St - Shoeburyness,Monday,39.46
+Monday,47351,,,,Shoeburyness,Tottenham Hale,1Z21,0701 Shoeburyness - Skegness ADEX,Monday,40.64
+Monday,305 EMU,,,,Tottenham Hale,London Liverpool St,1S55,0756 Bishops Stortford - Liverpool St,Monday,6.00
+Monday,47549,,,,London Liverpool St,Colchester,1N20,0930 Liverpool St - Norwich,Monday,51.65
+Monday,47576,,,,Colchester,London Liverpool St,1K23,0900 Yarmouth - Liverpool St,Monday,51.65
+Monday,37089,,,,London Liverpool St,Harlow Town,2L82,1205 Liverpool St - Cambridge,Monday,22.69
+Monday,305 EMU,,,,Harlow Town,London Liverpool St,2O73,1234 Bishops Stortford - Liverpool St,Monday,23.18
+Monday,Tube,,,,London Liverpool St,London Euston,,,,
+Monday,Tube,,,,London Euston,London Liverpool St,,,,
+Monday,31185,,,,London Liverpool St,King's Lynn,1L26,1636 Liverpool St - King's Lynn,Monday,96.89
+Monday,Taxi,,,,King's Lynn,Ely,,,,
+Monday,47351,,,,Ely,Barking,1Z22,1705 Skegness - Shoeburyness rtn ADEX,Monday,73.05
+Monday,302 EMU,,,,Barking,London Fenchurch Street,2486,2110 Pitsea - Fenchurch St,Monday,7.55
+Monday,Tube,,,,London Fenchurch Street,London Kings Cross,,,,
+Monday,31407,31253,,,London Kings Cross,Peterborough,1L22,2300 Kings Cross - Bradford Exch,Monday,76.36
+Tuesday,31268,31319,,,Peterborough,London Kings Cross,1A41,2123 Bradford Exch - Kings Cross,Monday,76.36
+Tuesday,Taxi,,,,London Kings Cross,London Victoria,,,,
+Tuesday,73116,,,,London Victoria,Faversham,1S02,0300 Victoria - Ramsgate,Tuesday,51.96
+Tuesday,73139,,,,Faversham,Dover Priory,1K00,0450 Faversham - Dover W. Docks,Tuesday,25.33
+Tuesday,SR EMU,,,,Dover Priory,Tonbridge,2W12,0523 Ramsgate - Charing Cross,Tuesday,47.76
+Tuesday,SR EMU,,,,Tonbridge,London Bridge,2W10,0500 Ramsgate - Charing Cross,Tuesday,27.65
+Tuesday,SR EMU,,,,London Bridge,South Croydon,2D09,0755 London Bridge - Coulsdon North via Crystal Palace,Tuesday,12.70
+Tuesday,33056,,,,South Croydon,East Croydon,2U39,0801 East Grinstead - London Bridge,Tuesday,0.91
+Tuesday,33065,,,,East Croydon,London Bridge,2U45,0825 East Grinstead - London Bridge,Tuesday,10.53
+Tuesday,Tube,,,,London Bridge,London Euston,,,,
+Tuesday,87011,,,,London Euston,Coventry,1S59,0935 Euston - Inverness,Tuesday,93.99
+Tuesday,86314,,,,Coventry,London Euston,1A31,0940 Shrewsbury - Euston,Tuesday,93.99
+Tuesday,Walk,,,,London Euston,London Kings Cross,,,,
+Tuesday,47411,,,,London Kings Cross,Peterborough,1D03,1305 Kings Cross - Cleethorpes,Tuesday,76.36
+Tuesday,55012,,,,Peterborough,Grantham,1L43,1403 Kings Cross - York,Tuesday,29.10
+Tuesday,120 DMU,,,,Grantham,Skegness,2E78,1410 Derby - Skegness,Tuesday,55.64
+Tuesday,31221,,,,Skegness,Boston,1J27,1726 Skegness - Sheffield,Tuesday,23.61
+Tuesday,20162,20067,,,Boston,Nottingham,1M07,1820 Skegness - Nottingham,Tuesday,50.78
+Tuesday,20195,20174,,,Nottingham,Beeston,1M47,1840 Skegness - Derby,Tuesday,3.31
+Tuesday,20166,20194,,,Beeston,Leicester,1M22,1853 Skegness - Leicester,Tuesday,24.19
+Tuesday,45104,,,,Leicester,Derby,1P30,2015 St Pancras - Derby,Tuesday,29.38
+Tuesday,45062,,,,Derby,Sheffield,1E38,1937 Bristol TM - Newcastle,Tuesday,36.40
+Wednesday,45062,,,,Sheffield,York,1E38,1937 Bristol TM - Newcastle,Tuesday,53.15
+Wednesday,40086,,,,York,London Kings Cross,1E43,2035 Aberdeen - Kings Cross,Tuesday,188.11
+Wednesday,Walk,,,,London Kings Cross,London Euston,,,,
+Wednesday,87006,,,,London Euston,Watford Jn,1S35,0735 Euston - Glasgow Central,Wednesday,17.44
+Wednesday,86244,,,,Watford Jn,Birmingham New St,1J20,0740 Euston - Shrewsbury,Wednesday,95.48
+Wednesday,116 DMU,,,,Birmingham New St,Duddeston,2G30,0901 Longbridge - Four Oaks,Wednesday,1.51
+Wednesday,116 DMU,,,,Duddeston,Birmingham New St,2G35,0902 Lichfield C - Longbridge,Wednesday,1.51
+Wednesday,86101,,,,Birmingham New St,Coventry,1V28,0820 Liverpool - Paddington,Wednesday,18.93
+Wednesday,50006,,,,Coventry,London Paddington,1V28,0820 Liverpool - Paddington,Wednesday,115.16
+Wednesday,Tube,,,,London Paddington,London Kings Cross,,,,
+Wednesday,47404,,,,London Kings Cross,Peterborough,1D03,1305 Kings Cross - Cleethorpes,Wednesday,76.36
+Wednesday,55004,,,,Peterborough,Grantham,1L43,1403 Kings Cross - York,Wednesday,29.10
+Wednesday,120 DMU,,,,Grantham,Skegness,2E78,1410 Derby - Skegness,Wednesday,55.64
+Wednesday,31221,,,,Skegness,Boston,1J27,1726 Skegness - Sheffield,Wednesday,23.61
+Wednesday,20181,20186,,,Boston,Nottingham,1M07,1820 Skegness - Nottingham,Wednesday,50.78
+Wednesday,25081,25164,,,Nottingham,Derby,1M47,1840 Skegness - Derby,Wednesday,16.00
+Wednesday,120 DMU,,,,Derby,Nottingham,2E84,1953 Crewe - Lincoln St M,Wednesday,16.00
+Wednesday,45064,,,,Nottingham,Sheffield,1E84,2100 St Pancras - Sheffield,Wednesday,40.61
+Thursday,46039,,,,Sheffield,York,1E38,1937 Bristol TM - Newcastle,Wednesday,53.15
+Thursday,47206,,,,York,Doncaster,1E39,2225 Edinburgh - Kings Cross,Wednesday,32.18
+Thursday,DMU,,,,Doncaster,Rowntrees Halt,2L49,0625 Doncaster - Rowntrees Halt,Thursday,33.43
+Thursday,Walk,,,,Rowntrees Halt,York,,,,
+Thursday,55019,,,,York,London Kings Cross,1A08,0807 York - Kings Cross,Thursday,188.11
+Thursday,Tube,,,,London Kings Cross,London Liverpool St,,,,
+Thursday,47566,,,,London Liverpool St,Norwich,1N24,1130 Liverpool St - Norwich,Thursday,114.96
+Thursday,03370,,,,Norwich,Norwich,5N35,1500 Norwich Shunt Release,Thursday,0.50
+Thursday,31291,,,,Norwich,Peterborough,1M68,1532 Norwich - Birmingham NS,Thursday,81.49
+Thursday,55019,,,,Peterborough,Grantham,1L44,1603 Kings Cross - York,Thursday,29.10
+Thursday,120 DMU,,,,Grantham,Boston,2E62,1643 Nottingham - Skegness,Thursday,32.03
+Thursday,20150,20030,,,Boston,Nottingham,1M07,1820 Skegness - Nottingham,Thursday,50.78
+Thursday,25323,25313,,,Nottingham,Derby,1M47,1840 Skegness - Burton,Thursday,16.00
+Thursday,25323,25313,,,Derby,Burton-on-Trent,1M47,1840 Skegness - Burton,Thursday,11.01
+Thursday,45102,,,,Burton-on-Trent,Derby,1M40,1705 Poole - Derby,Thursday,11.01
+Thursday,120 DMU,,,,Derby,Crewe,2M84,2033 Lincoln St M - Crewe,Thursday,50.76
+Thursday,83009,,,,Crewe,Rugby,1A00,2045 Barrow - Euston,Thursday,75.50
+Friday,83009,,,,Rugby,London Euston,1A00,2045 Barrow - Euston,Thursday,82.50
+Friday,Taxi,,,,London Euston,London Victoria,,,,
+Friday,73123,,,,London Victoria,Folkestone Central,1V02,0330 Victoria - Dover W. Docks,Friday,70.99
+Friday,SR EMU,,,,Folkestone Central,Tonbridge,2W12,0523 Ramsgate - Charing Cross,Friday,40.39
+Friday,SR EMU,,,,Tonbridge,London Bridge,2W10,0500 Ramsgate - Charing Cross,Friday,27.65
+Friday,Tube,,,,London Bridge,London Victoria,,,,
+Friday,SR EMU,,,,London Victoria,Clapham Jn Brighton Line,2H67,0805 Victoria - Epsom Downs,Friday,2.66
+Friday,SR EMU,,,,Clapham Jn Brighton Line,London Victoria,2J66,0810 Norwood Jn - Victoria via Crystal Palace,Friday,2.66
+Friday,Tube,,,,London Victoria,London Euston,,,,
+Friday,87012,,,,London Euston,Birmingham New St,1G23,0910 Euston - Birmingham NS,Friday,112.91
+Friday,85029,,,,Birmingham New St,Crewe,1M88,0605 Plymouth - Liverpool,Friday,53.51
+Friday,87018,,,,Crewe,London Euston,1A40,0935 Carlisle - Euston,Friday,158.00
+Friday,87020,,,,London Euston,Glasgow Central,1S80,1445 Euston - Glasgow Central,Friday,401.40
+Friday,Walk,,,,Glasgow Central,Glasgow Queen St,,,,
+Friday,47701,,,,Glasgow Queen St,Edinburgh Waverley,1O65,2030 Glasgow Qn St - Edinburgh,Friday,47.26
+Friday,47701,,,,Edinburgh Waverley,Glasgow Queen St,1O70,2130 Edinburgh - Glasgow Qn St,Friday,47.26
+Friday,Walk,,,,Glasgow Queen St,Glasgow Central,,,,
+Friday,85035,,,,Glasgow Central,Motherwell,1V56,2355 Glasgow Central - Bristol TM,Friday,12.85
+Saturday,85035,,,,Motherwell,Carlisle,1V56,2355 Glasgow Central - Bristol TM,Friday,89.45
+Saturday,85038,,,,Carlisle,Glasgow Central,1S19,2140 Bristol TM - Glasgow Central,Friday,102.30
+Saturday,37155,37253,,,Glasgow Central,Cardiff Central,1Z76,0619 The 'Cardiff Steamer' Railtour,Saturday,410.73
+Saturday,33030,,,,Cardiff Central,Newport Gwent,1M75,1510 Cardiff - Crewe,Saturday,11.75
+Saturday,45049,,,,Newport Gwent,Cardiff Central,1Z28,0945 Newcastle - Swansea (Relief),Saturday,11.75
+Saturday,37155,37253,,,Cardiff Central,Carstairs,1Z77,1649 The 'Cardiff Steamer' Railtour,Saturday,382.09
+Sunday,37155,37253,,,Carstairs,Glasgow Central,1Z77,1649 The 'Cardiff Steamer' Railtour,Saturday,28.64

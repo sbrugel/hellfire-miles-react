@@ -1,0 +1,116 @@
+Day,Loco1,Loco2,Loco3,Loco4,From,To,Headcode,Train,TrainStartDay,Mileage
+Monday,81013,,,,Crewe,Carlisle,1S19,2112 Bristol TM - Glasgow Central,Sunday,140.86
+Monday,47469,,,,Carlisle,Annan,1S18,2215 Euston - Glasgow Central,Sunday,17.73
+Monday,47442,,,,Annan,Dumfries,1S90,0610 Carlisle - Glasgow Central,Monday,15.36
+Monday,47480,,,,Dumfries,Carlisle,1M70,0655 Glasgow Central - Nottingham,Monday,33.09
+Monday,87026,,,,Carlisle,London Euston,1M59,0805 Glasgow Central - Euston,Monday,298.86
+Monday,Walk,,,,London Euston,London Kings Cross,,,,
+Monday,55008,,,,London Kings Cross,Grantham,1L43,1403 Kings Cross - York,Monday,105.46
+Monday,120 DMU,,,,Grantham,Skegness,2E78,1410 Derby - Skegness,Monday,55.64
+Monday,31276,,,,Skegness,Boston,1J27,1726 Skegness - Sheffield,Monday,23.61
+Monday,20045,20160,,,Boston,Nottingham,1M07,1820 Skegness - Nottingham,Monday,50.78
+Monday,31155,31281,,,Nottingham,Beeston,1M47,1840 Skegness - Burton,Monday,3.31
+Monday,20006,20136,,,Beeston,Leicester,1M22,1853 Skegness - Leicester,Monday,24.19
+Monday,31236,,,,Leicester,Birmingham New St,1M76,1834 Norwich - Birmingham NS,Monday,39.85
+Monday,86210,,,,Birmingham New St,Wolverhampton,1G47,2140 Euston - Wolverhampton,Monday,12.88
+Tuesday,86230,,,,Wolverhampton,Crewe,1S19,2126 Bristol TM - Glasgow Central,Monday,40.64
+Tuesday,83010,,,,Crewe,Mossend Yard,1S25,2240 Euston - Perth,Monday,232.78
+Tuesday,47210,,,,Mossend Yard,Dunblane,1S25,2240 Euston - Perth,Monday,31.33
+Tuesday,40160,,,,Dunblane,Haymarket,1G23,0703 Perth - Edinburgh,Tuesday,40.18
+Tuesday,47710,,,,Haymarket,Glasgow Queen St,1O12,0830 Edinburgh - Glasgow Qn St,Tuesday,46.04
+Tuesday,Walk,,,,Glasgow Queen St,Glasgow Central,,,,
+Tuesday,126 DMU,,,,Glasgow Central,Paisley Gilmour St,2A19,0935 Glasgow Central - Ayr,Tuesday,7.18
+Tuesday,ScR EMU,,,,Paisley Gilmour St,Glasgow Central,2G26,0945 Gourock - Glasgow Central,Tuesday,7.18
+Tuesday,85007,,,,Glasgow Central,Preston,1M28,1045 Glasgow Central - Manchester Vic.,Tuesday,192.39
+Tuesday,40093,,,,Preston,Bolton,1M28,1045 Glasgow Central - Manchester Vic.,Tuesday,20.20
+Tuesday,104 DMU,,,,Bolton,Preston,2P64,1415 Manchester Vic. - Blackpool N.,Tuesday,20.20
+Tuesday,85038,,,,Preston,Crewe,1K32,1410 Barrow - Crewe,Tuesday,51.01
+Tuesday,47432,,,,Crewe,Chester,1D63,1725 Crewe - Holyhead,Tuesday,21.14
+Tuesday,40028,,,,Chester,Warrington Bank Quay,1J39,1652 Bangor - Manchester Vic.,Tuesday,18.06
+Tuesday,87010,,,,Warrington Bank Quay,Preston,1S87,1800 Birmingham NS - Glasgow Central,Tuesday,26.88
+Tuesday,87026,,,,Preston,Crewe,1M52,1730 Glasgow Central - Euston,Tuesday,50.78
+Tuesday,86313,,,,Crewe,Manchester Picc. Main,1M60,1505 Plymouth - Manchester Picc.,Tuesday,30.89
+Tuesday,86004,,,,Manchester Picc. Main,Stockport,1O52,2330 Manchester Picc. - Brighton,Tuesday,5.88
+Wednesday,82006,,,,Stockport,Stafford,1A01,0027 Manchester Picc. - Euston,Wednesday,47.90
+Wednesday,85021,,,,Stafford,London Euston,1A01,0027 Manchester Picc. - Euston,Wednesday,135.88
+Wednesday,86254,,,,London Euston,Crewe,1H04,0650 Euston - Manchester Picc.,Wednesday,158.00
+Wednesday,40025,,,,Crewe,Chester,1D32,0840 Stoke - Llandudno,Wednesday,21.14
+Wednesday,47352,,,,Chester,Colwyn Bay,1D33,0930 Crewe - Holyhead,Wednesday,40.33
+Wednesday,47432,,,,Colwyn Bay,Crewe,1A45,1022 Holyhead - Euston,Wednesday,61.46
+Wednesday,86255,,,,Crewe,Warrington Bank Quay,1S39,1208 Birmingham NS - Glasgow Central,Wednesday,23.90
+Wednesday,40107,,,,Warrington Bank Quay,Chester,1D57,1345 Manchester Vic. - Bangor,Wednesday,18.08
+Wednesday,40075,,,,Chester,Manchester Vic.,1J22,1347 Bangor - Manchester Vic.,Wednesday,39.93
+Wednesday,104 DMU,,,,Manchester Vic.,Wigan Wallgate,2F50,1627 Manchester Vic. - Wigan,Wednesday,20.36
+Wednesday,Walk,,,,Wigan Wallgate,Wigan North Western,,,,
+Wednesday,86229,,,,Wigan North Western,Preston,1P70,1500 Euston - Carlisle,Wednesday,15.13
+Wednesday,85006,,,,Preston,Crewe,1M54,1315 Stranraer - Euston,Wednesday,50.78
+Wednesday,86318,,,,Crewe,London Euston,1A79,1905 Liverpool - Euston,Wednesday,158.00
+Wednesday,85002,,,,London Euston,Tamworth LL,1S18,2215 Euston - Glasgow Central,Wednesday,110.01
+Thursday,85002,,,,Tamworth LL,Stafford,1S18,2215 Euston - Glasgow Central,Wednesday,23.53
+Thursday,86258,,,,Stafford,Crewe,1F01,0050 Euston - Liverpool,Thursday,24.46
+Thursday,86240,,,,Crewe,Birmingham New St,1G00,0350 Crewe - Birmingham NS,Thursday,53.51
+Thursday,86225,,,,Birmingham New St,Coventry,1A72,0600 Wolverhampton - Euston,Thursday,18.93
+Thursday,310 EMU,,,,Coventry,Birmingham New St,2G03,0633 Northampton - Birmingham NS,Thursday,18.93
+Thursday,45066,,,,Birmingham New St,Cheltenham Spa,1V59,0602 Sheffield - Cardiff,Thursday,45.46
+Thursday,46048,,,,Cheltenham Spa,Gloucester,1V62,0815 Birmingham NS - Plymouth,Thursday,6.50
+Thursday,46056,,,,Gloucester,Bristol Temple Meads,1V62,0815 Birmingham NS - Plymouth,Thursday,40.54
+Thursday,47026,,,,Bristol Temple Meads,Gloucester,1E30,0820 Plymouth - Leeds,Thursday,40.54
+Thursday,46031,,,,Gloucester,Birmingham New St,1E30,0820 Plymouth - Leeds,Thursday,51.96
+Thursday,86103,,,,Birmingham New St,Wolverhampton,1F25,1255 Birmingham NS - Liverpool,Thursday,12.88
+Thursday,86235,,,,Wolverhampton,Crewe,1M50,0920 Brighton - Manchester Picc.,Thursday,40.64
+Thursday,87022,,,,Crewe,Preston,1P62,1200 Euston - Blackpool N,Thursday,50.78
+Thursday,25066,,,,Preston,Lancaster,1P33,1614 Liverpool - Barrow,Thursday,20.98
+Thursday,86315,,,,Lancaster,Preston,1M29,1502 Glasgow Central - Manchester Vic.,Thursday,20.98
+Thursday,47433,,,,Preston,Manchester Vic.,1M29,1502 Glasgow Central - Manchester Vic.,Thursday,30.83
+Thursday,Walk,,,,Manchester Vic.,Manchester Picc. Main,,,,
+Thursday,87016,,,,Manchester Picc. Main,Crewe,1A84,2000 Manchester Picc. - Euston,Thursday,30.89
+Thursday,86235,,,,Crewe,Manchester Picc. Main,1M60,1505 Plymouth - Manchester Picc.,Thursday,30.89
+Thursday,86318,,,,Manchester Picc. Main,Stockport,1O52,2330 Manchester Picc. - Brighton,Thursday,5.88
+Friday,85021,,,,Stockport,Stafford,1A01,0027 Manchester Picc. - Euston,Friday,47.90
+Friday,85031,,,,Stafford,Crewe,1F01,0050 Euston - Liverpool,Friday,24.46
+Friday,86216,,,,Crewe,Birmingham New St,1G00,0350 Crewe - Birmingham NS,Friday,53.51
+Friday,37242,,,,Birmingham New St,Reading,1O01,0600 Derby - Poole,Friday,98.18
+Friday,47369,,,,Reading,Poole,1O01,0600 Derby - Poole,Friday,81.63
+Friday,33116,,,,Poole,Bournemouth,1W22,1034 Weymouth - Waterloo,Friday,5.75
+Friday,33101,,,,Bournemouth,Reading,1E63,1135 Poole - Newcastle,Friday,75.88
+Friday,47066,,,,Reading,Birmingham New St,1E63,1135 Poole - Newcastle,Friday,94.13
+Friday,45042,,,,Birmingham New St,Bristol Temple Meads,1V91,1143 Newcastle - Bristol TM,Friday,89.93
+Friday,47477,,,,Bristol Temple Meads,Exeter St Davids,1V93,0950 Edinburgh - Plymouth,Friday,75.51
+Friday,HST,,,,Exeter St Davids,London Paddington,1A19,1625 Penzance - Paddington,Friday,173.35
+Friday,47082,,,,London Paddington,Reading,1A20,2208 Paddington - Oxford,Friday,35.91
+Friday,50036,,,,Reading,London Paddington,1V88,2042 Birmingham NS - Paddington,Friday,35.91
+Saturday,50004,,,,London Paddington,Reading,1B02,0005 Paddington - Penzance,Saturday,35.91
+Saturday,DMU,,,,Reading,London Paddington,2A13,0325 Reading - Paddington,Saturday,35.91
+Saturday,Taxi,,,,London Paddington,London Euston,,,,
+Saturday,25311,25193,,,London Euston,Rotherwood,1Z50,0554 The 'Buxton Zombie' Railtour,Saturday,163.96
+Saturday,47228,,,,Rotherwood,Manchester Picc. Main,1Z50,0947 The 'Buxton Zombie' Railtour,Saturday,45.76
+Saturday,40113,,,,Manchester Picc. Main,Buxton,1Z50,1106 The 'Buxton Zombie' Railtour,Saturday,25.80
+Saturday,104 DMU,,,,Buxton,Stockport,2H71,1208 Buxton - Manchester Picc.,Saturday,19.93
+Saturday,304 EMU,,,,Stockport,Manchester Picc. Main,2H67,1150 Stafford - Manchester Picc.,Saturday,5.88
+Saturday,Walk,,,,Manchester Picc. Main,Manchester Vic.,,,,
+Saturday,47407,,,,Manchester Vic.,Stalybridge,1E99,1305 Liverpool - York,Saturday,7.78
+Saturday,46037,,,,Stalybridge,Manchester Vic.,1M73,1121 Newcastle - Liverpool,Saturday,7.78
+Saturday,47476,,,,Manchester Vic.,Stalybridge,1E74,1405 Liverpool - Newcastle,Saturday,7.78
+Saturday,47570,,,,Stalybridge,Manchester Vic.,1M26,1350 York - Liverpool,Saturday,7.78
+Saturday,40154,,,,Manchester Vic.,Chester,1D21,1542 Manchester Vic. - Bangor,Saturday,39.93
+Saturday,47348,,,,Chester,Crewe,1A73,1605 Llandudno - Euston,Saturday,21.14
+Saturday,85037,,,,Crewe,Stafford,1G62,1723 Liverpool - Birmingham NS,Saturday,24.46
+Saturday,83011,,,,Stafford,Stoke-on-Trent,1M71,1430 Swansea - Manchester Picc.,Saturday,16.19
+Saturday,86254,,,,Stoke-on-Trent,Manchester Picc. Main,1H21,1750 Euston - Manchester Picc.,Saturday,37.59
+Saturday,Walk,,,,Manchester Picc. Main,Manchester Vic.,,,,
+Saturday,47485,,,,Manchester Vic.,Preston,2P64,2113 Manchester Vic. - Blackpool N.,Saturday,30.83
+Saturday,86237,,,,Preston,Carlisle,1P49,1915 Euston - Carlisle,Saturday,90.09
+Sunday,08759,,,,Carlisle,Carlisle,1M10,0045 Carlisle Sleeping Cars,Sunday,0.50
+Sunday,86101,,,,Carlisle,Preston,1M10,2150 Glasgow Central - Euston,Saturday,90.09
+Sunday,40103,,,,Preston,Crewe,1M16,1935 Inverness - Euston,Saturday,67.96
+Sunday,81007,,,,Crewe,London Euston,1M15,2045 Inverness - Euston,Saturday,158.00
+Sunday,86325,,,,London Euston,Birmingham New St,1G24,0940 Euston - Wolverhampton,Sunday,112.91
+Sunday,47243,,,,Birmingham New St,Exeter St Davids,1V69,0908 Manchester Picc. - Plymouth,Sunday,166.45
+Sunday,47298,,,,Exeter St Davids,Bristol Temple Meads,1E21,1215 Penzance - Leeds,Sunday,75.51
+Sunday,33046,,,,Bristol Temple Meads,Warminster,1O87,1605 Cardiff - Portsmouth H,Sunday,32.91
+Sunday,33019,,,,Warminster,Bristol Temple Meads,1V32,1615 Portsmouth H - Bristol TM,Sunday,32.91
+Sunday,47050,,,,Bristol Temple Meads,Taunton,1V87,1608 Derby - Newton Abbot,Sunday,44.76
+Sunday,46028,,,,Taunton,Bristol Temple Meads,1B70,1815 Plymouth - Bristol TM,Sunday,45.78
+Sunday,47123,,,,Bristol Temple Meads,Bath Spa,1A83,2115 Bristol TM - Paddington,Sunday,11.50
+Sunday,33018,,,,Bath Spa,Bristol Temple Meads,1V37,1915 Portsmouth H - Cardiff,Sunday,11.50
+Sunday,47143,,,,Bristol Temple Meads,Cardiff Central,1V38,2015 Portsmouth H - Cardiff,Sunday,38.04
